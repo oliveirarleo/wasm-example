@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>rust-wasm</title>
+    <script>
+      // fetch("target/wasm32-unknown-unknown/release/rust_wasm.wasm")
+      fetch("target/wasm32-wasi/release/rust_wasm.wasm")
+        .then((response) => response.arrayBuffer())
+        .then((bytes) => WebAssembly.instantiate(bytes, {}))
+        .then((wasm) => {
+          console.log("The answer is: ", wasm.instance.exports.add_one(13));
+        });
+    </script>
+  </head>
+  <body></body>
+</html>

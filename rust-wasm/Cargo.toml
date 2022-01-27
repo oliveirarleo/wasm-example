@@ -1,0 +1,12 @@
+[package]
+name = "rust-wasm"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+description = "A sample project with wasm-pack"
+repository = "https://github.com/myusername/myrepo"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>c-clang wasm example</title>
+    <script>
+      fetch("add.wasm")
+        .then((response) => response.arrayBuffer())
+        .then((bytes) => WebAssembly.instantiate(bytes, {}))
+        .then((wasm) => {
+          console.log("The answer is: ", wasm.instance.exports.add(21, 22));
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!-- Please take a look at -->
+<!-- https://depth-first.com/articles/2019/10/16/compiling-c-to-webassembly-and-running-it-without-emscripten/ -->
